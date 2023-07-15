@@ -5,7 +5,6 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  // important: true,
   theme: {
     screens: {
       'mini': '320px',
@@ -19,56 +18,33 @@ module.exports = {
         'triangle-up': 'url("/img/triangle-up.svg")',
         'triangle-down': 'url("/img/triangle-down.svg")',
       },
-      fontFamily: {
-        sans: ['var(--font-poppins)'],
-      },
       colors: {
-        pageactive: '#4AC3BE',
-        primary: {
-          '0': '#D1F9F1',
-          '25': '#87DED6',
-          '50': '#4AC3BE',
-          '100': '#326D82'
-        },
-        success: {
-          '0': '#DDF5FC',
-          '25': '#56CCF2',
-          '50': '#2D9CDB',
-          '100': '#2F80ED'
-        },
-        error: {
-          '0': '#FBDDDD',
-          '25': '#F7BCBC',
-          '50': '#EB5757',
-          '100': '#B61515'
-        },
-        alert: {
-          '0': '#FCF9CE',
-          '25': '#F9F29D',
-          '50': '#F0DF09',
-          '100': '#C4B607'
-        },
-        warning: {
-          '0': '#FEEEE0',
-          '25': '#FDDEC1',
-          '50': '#FAAC64',
-          '100': '#C56206'
-        },
-        main: {
-          '-50': '#EDEFF3',
-          '-25': '#E2E4E9',
-          '0': '#D8D9DE',
-          '25': '#9D9EA1',
-          '50': '#545455',
-          '100': '#242424'
-        }
+        'main-black': '#212121',
+        'main-primary': '#E1991C',
+        'poke-normal': '#A8A77A',
+        'poke-fire': '#EE8130',
+        'poke-water': '#6390F0',
+        'poke-electric': '#F7D02C',
+        'poke-grass': '#7AC74C',
+        'poke-ice': '#96D9D6',
+        'poke-fighting': '#C22E28',
+        'poke-poison': '#A33EA1',
+        'poke-ground': '#E2BF65',
+        'poke-flying': '#A98FF3',
+        'poke-psychic': '#F95587',
+        'poke-bug': '#A6B91A',
+        'poke-rock': '#B6A136',
+        'poke-ghost': '#735797',
+        'poke-dragon': '#6F35FC',
+        'poke-dark': '#705746',
+        'poke-steel': '#B7B7CE',
+        'poke-fairy': '#D685AD',
       },
       animation: {
         fadeIn: 'fadeIn 0.2s forwards ease-in',
         fadeOut: 'fadeOut 0.2s forwards ease-in',
         bounce: 'bounce 2.7s infinite',
         'bounce-custom': 'bounce-custom 2.5s infinite'
-
       },
       keyframes: {
         fadeIn: {

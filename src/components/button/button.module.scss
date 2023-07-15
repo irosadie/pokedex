@@ -1,0 +1,57 @@
+// .btn {
+//     @apply bg-white text-yellow-600 shadow-md rounded-full w-fit px-14 py-4 text-xl font-bold;
+
+// }
+.btn{
+    @apply bg-transparent;
+
+
+    &.w_full{
+        @apply w-full;
+    }
+
+    &.w_standard{
+        @apply w-fit;
+    }
+
+    &.i_default{
+        @apply bg-white text-main-primary;
+    }
+
+    &.i_primary {
+        @apply bg-main-primary text-white;
+    }
+
+    &.d_small {
+        @apply py-2.5 px-12 text-base font-bold;
+    }
+
+    &.d_normal{
+        @apply text-base;
+    }
+
+    &.d_bigger{
+        @apply py-4 px-14 text-xl font-bold;
+    }
+
+    &.r_standard{
+        @apply rounded;
+    }
+
+    &.r_full{
+        @apply rounded-full;
+    }
+
+    &.r_none{
+        @apply rounded-none;
+    }
+
+    &.s_md{
+        @apply shadow-md;
+    }
+
+    &.s_none {
+        @apply shadow-none;
+    }
+
+}
