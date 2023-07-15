@@ -1,0 +1,82 @@
+div.circle_tag{
+    @apply h-14 w-14 border-[3px] rounded-full flex items-center justify-center font-bold text-lg;
+
+    &.d_normal{
+        @apply px-4 py-0.5;
+    }
+
+    &.i_normal{
+        @apply border-poke-normal-smooth;
+    }
+
+    &.i_fire{
+        @apply border-poke-fire-smooth;
+    }
+
+    &.i_water{
+        @apply border-poke-water-smooth;
+    }
+
+    &.i_dark {
+        @apply border-poke-dark-smooth;
+    }
+
+    &.i_electric{
+        @apply border-poke-electric-smooth;
+    }
+
+    &.i_grass{
+        @apply border-poke-grass-smooth;
+    }
+
+    &.i_ice{
+        @apply border-poke-ice-smooth;
+    }
+
+    &.i_fighting{
+        @apply border-poke-fighting-smooth;
+    }
+
+    &.i_poison{
+        @apply border-poke-poison-smooth;
+    }
+
+    &.i_ground{
+        @apply border-poke-ground-smooth;
+    }
+
+    &.i_flying{
+        @apply border-poke-flying-smooth;
+    }
+    &.i_psychic{
+        @apply border-poke-psychic-smooth;
+    }
+
+    &.i_bug{
+        @apply border-poke-bug-smooth;
+    }
+
+    &.i_rock{
+        @apply border-poke-rock-smooth;
+    }
+
+    &.i_ghost{
+        @apply border-poke-ghost-smooth;
+    }
+
+    &.i_dragon{
+        @apply border-poke-dragon-smooth;
+    }
+
+    &.i_steel{
+        @apply border-poke-steel-smooth;
+    }
+
+    &.i_fairy{
+        @apply border-poke-fairy-smooth;
+    }
+
+    &.i_unknown{
+        @apply border-poke-unknown-smooth;
+    }
+}
