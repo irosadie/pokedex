@@ -1,12 +1,12 @@
 interface PokemonType {
   type: {
     id: number;
-    name: string;
+    name: PokeColorProps
   }
 }
 
 interface PokemonShortDetail {
-  types: PokemonType[];
+  types: PokemonType[]; 
 }
 
 interface Pokemon {
