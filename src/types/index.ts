@@ -1,0 +1,1 @@
+export {type PokemonData} from './get-pokemon'
