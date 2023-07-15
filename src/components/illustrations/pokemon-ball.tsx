@@ -11,8 +11,8 @@ const PokemonBall = () => {
         <path d="M170.401 195.303C183.874 195.303 194.796 184.388 194.796 170.922C194.796 157.457 183.874 146.542 170.401 146.542C156.929 146.542 146.007 157.457 146.007 170.922C146.007 184.388 156.929 195.303 170.401 195.303Z" fill="#F7F7F7" />
       </g>
       <defs>
-        <filter id="filter0_d_777_637" x="0.688477" y="0.4426" width="347.429" height="348.956" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <filter id="filter0_d_777_637" x="0.688477" y="0.4426" width="347.429" height="348.956" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
           <feOffset dx="4" dy="4" />
           <feGaussianBlur stdDeviation="8" />
