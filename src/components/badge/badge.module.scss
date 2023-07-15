@@ -1,0 +1,86 @@
+span.badge{
+    @apply text-white rounded-full font-medium text-xs whitespace-nowrap h-fit;
+
+    &.d_normal{
+        @apply px-4 py-0.5;
+    }
+
+    &.i_normal{
+        @apply bg-poke-normal;
+    }
+
+    &.i_fire{
+        @apply bg-poke-fire;
+    }
+
+    &.i_water{
+        @apply bg-poke-water;
+    }
+
+    &.i_dark {
+        @apply bg-poke-dark;
+    }
+
+    &.i_electric{
+        @apply bg-poke-electric;
+    }
+
+    &.i_grass{
+        @apply bg-poke-grass;
+    }
+
+    &.i_ice{
+        @apply bg-poke-ice;
+    }
+
+    &.i_fighting{
+        @apply bg-poke-fighting;
+    }
+
+    &.i_poison{
+        @apply bg-poke-poison;
+    }
+
+    &.i_ground{
+        @apply bg-poke-ground;
+    }
+
+    &.i_flying{
+        @apply bg-poke-flying;
+    }
+    &.i_psychic{
+        @apply bg-poke-psychic;
+    }
+
+    &.i_bug{
+        @apply bg-poke-bug;
+    }
+
+    &.i_rock{
+        @apply bg-poke-rock;
+    }
+
+    &.i_ghost{
+        @apply bg-poke-ghost;
+    }
+
+    &.i_dragon{
+        @apply bg-poke-dragon;
+    }
+
+    &.i_steel{
+        @apply bg-poke-steel
+    }
+
+    &.i_fairy{
+        @apply bg-poke-fairy
+    }
+
+    &.i_unknown{
+        @apply bg-poke-unknown
+    }
+
+    &.b_bordered{
+        @apply border-[0.5px] border-white;
+    }
+}
