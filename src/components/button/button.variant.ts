@@ -14,8 +14,8 @@ export const button = cva(styles.btn, {
             bigger: styles.d_bigger,
         },
         shadow: {
-            true: null,
-            false: null
+            true: styles.s_md,
+            false: styles.s_none
         },
         width: {
             standard: styles.w_standard,
@@ -27,10 +27,7 @@ export const button = cva(styles.btn, {
             none: styles.r_none
         }
     },
-    compoundVariants: [
-        { shadow: true, className: [styles.s_md] },
-        { shadow: false, className: [styles.s_none] },
-    ],
+    compoundVariants: [],
     defaultVariants: {
         intent: 'primary',
         dimension: 'normal',
