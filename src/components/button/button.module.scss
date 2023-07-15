@@ -1,10 +1,6 @@
-// .btn {
-//     @apply bg-white text-yellow-600 shadow-md rounded-full w-fit px-14 py-4 text-xl font-bold;
 
-// }
 .btn{
-    @apply bg-transparent;
-
+    @apply whitespace-nowrap h-fit;
 
     &.w_full{
         @apply w-full;
