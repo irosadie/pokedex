@@ -1,0 +1,25 @@
+nav.navbar{
+    @apply fixed top-0 w-full z-40;
+
+    .container{
+        @apply flex max-w-5xl m-auto px-4 h-20 items-center space-x-4 justify-between;
+ 
+        ul {
+            @apply flex space-x-12 font-bold items-center;
+
+            li {
+                .link{
+                    @apply py-2;
+                    &:hover{
+                        @apply text-main-primary;
+                    }
+                }
+            }
+        }
+    
+    }
+}
+
+.d_hidden{
+    @apply hidden;
+}
