@@ -1,0 +1,118 @@
+div.card{
+    @apply bg-inherit;
+
+    &.d_normal{
+        @apply px-4 py-0.5;
+    }
+
+    &.i_normal{
+        @apply bg-poke-normal-smooth;
+    }
+
+    &.i_fire{
+        @apply bg-poke-fire-smooth;
+    }
+
+    &.i_water{
+        @apply bg-poke-water-smooth;
+    }
+
+    &.i_dark {
+        @apply bg-poke-dark-smooth;
+    }
+
+    &.i_electric{
+        @apply bg-poke-electric-smooth;
+    }
+
+    &.i_grass{
+        @apply bg-poke-grass-smooth;
+    }
+
+    &.i_ice{
+        @apply bg-poke-ice-smooth;
+    }
+
+    &.i_fighting{
+        @apply bg-poke-fighting-smooth;
+    }
+
+    &.i_poison{
+        @apply bg-poke-poison-smooth;
+    }
+
+    &.i_ground{
+        @apply bg-poke-ground-smooth;
+    }
+
+    &.i_flying{
+        @apply bg-poke-flying-smooth;
+    }
+    &.i_psychic{
+        @apply bg-poke-psychic-smooth;
+    }
+
+    &.i_bug{
+        @apply bg-poke-bug-smooth;
+    }
+
+    &.i_rock{
+        @apply bg-poke-rock-smooth;
+    }
+
+    &.i_ghost{
+        @apply bg-poke-ghost-smooth;
+    }
+
+    &.i_dragon{
+        @apply bg-poke-dragon-smooth;
+    }
+
+    &.i_steel{
+        @apply bg-poke-steel-smooth;
+    }
+
+    &.i_fairy{
+        @apply bg-poke-fairy-smooth;
+    }
+
+    &.i_unknown{
+        @apply bg-poke-unknown-smooth;
+    }
+}
+
+.container{
+    @apply relative bg-white;
+
+    .favorite_btn{
+        @apply absolute top-2 right-2 z-20;
+    }
+
+    .wrapper{
+        @apply h-40 flex relative rounded-lg border-x border-t border-t-gray-border border-x-gray-border shadow-lg;
+        
+        .content{
+            @apply absolute m-3;
+
+            .wording{
+                @apply flex flex-col justify-between h-[134px];
+
+                h3{
+                    @apply text-lg font-bold text-main-black;
+                }
+
+                ul{
+                    @apply flex gap-2;
+                }
+            }
+        }
+
+        .bg_white{
+            @apply bg-white w-1/3 rounded-l-lg;
+        }
+
+        .bg_image{
+            @apply flex-1 rounded-r-lg bg-no-repeat;
+        }
+    }
+}
