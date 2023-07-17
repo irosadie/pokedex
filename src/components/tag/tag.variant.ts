@@ -1,8 +1,8 @@
 /* eslint-disable check-file/filename-naming-convention */
 import { cva } from 'class-variance-authority'
-import styles from './circle-tag.module.scss'
+import styles from './tag.module.scss'
 
-export const circleTag = cva(styles.circle_tag, {
+export const tag = cva(styles.circle_tag, {
     variants: {
         intent: {
             white: styles.i_white,
