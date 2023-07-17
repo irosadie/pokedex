@@ -1,0 +1,168 @@
+.hero{
+    &.container {
+        @apply h-fit bg-gradient-to-bl from-main-white mt-0 pb-8 rounded-lg shadow;
+    }
+    
+    .wrapper {
+        @apply flex;
+    }
+
+    &.i_normal{
+        @apply to-poke-normal-smooth;
+    }
+
+    &.i_fire{
+        @apply to-poke-fire-smooth;
+    }
+
+    &.i_water{
+        @apply to-poke-water-smooth;
+    }
+
+    &.i_dark {
+        @apply to-poke-dark-smooth;
+    }
+
+    &.i_electric{
+        @apply to-poke-electric-smooth;
+    }
+
+    &.i_grass{
+        @apply to-poke-grass-smooth;
+    }
+
+    &.i_ice{
+        @apply to-poke-ice-smooth;
+    }
+
+    &.i_fighting{
+        @apply to-poke-fighting-smooth;
+    }
+
+    &.i_poison{
+        @apply to-poke-poison-smooth;
+    }
+
+    &.i_ground{
+        @apply to-poke-ground-smooth;
+    }
+
+    &.i_flying{
+        @apply to-poke-flying-smooth;
+    }
+    &.i_psychic{
+        @apply to-poke-psychic-smooth;
+    }
+
+    &.i_bug{
+        @apply to-poke-bug-smooth;
+    }
+
+    &.i_rock{
+        @apply to-poke-rock-smooth;
+    }
+
+    &.i_ghost{
+        @apply to-poke-ghost-smooth;
+    }
+
+    &.i_dragon{
+        @apply to-poke-dragon-smooth;
+    }
+
+    &.i_steel{
+        @apply to-poke-steel-smooth;
+    }
+
+    &.i_fairy{
+        @apply to-poke-fairy-smooth;
+    }
+
+    &.i_unknown{
+        @apply to-poke-unknown-smooth;
+    }
+
+    &.i_normal_thick {
+        @apply bg-poke-normal;
+    }
+
+    &.i_fire_thick {
+        @apply bg-poke-fire;
+    }
+
+    &.i_water_thick {
+        @apply bg-poke-water;
+    }
+
+    &.i_dark_thick {
+        @apply bg-poke-dark;
+    }
+
+    &.i_electric_thick {
+        @apply bg-poke-electric;
+    }
+
+    &.i_grass_thick {
+        @apply bg-poke-grass;
+    }
+
+    &.i_ice_thick {
+        @apply bg-poke-ice;
+    }
+
+    &.i_fighting_thick {
+        @apply bg-poke-fighting;
+    }
+
+    &.i_poison_thick {
+        @apply bg-poke-poison;
+    }
+
+    &.i_ground_thick {
+        @apply bg-poke-ground;
+    }
+
+    &.i_flying_thick {
+        @apply bg-poke-flying;
+    }
+
+    &.i_psychic_thick {
+        @apply bg-poke-psychic;
+    }
+
+    &.i_bug_thick {
+        @apply bg-poke-bug;
+    }
+
+    &.i_rock_thick {
+        @apply bg-poke-rock;
+    }
+
+    &.i_ghost_thick {
+        @apply bg-poke-ghost;
+    }
+
+    &.i_dragon_thick {
+        @apply bg-poke-dragon;
+    }
+
+    &.i_steel_thick {
+        @apply bg-poke-steel;
+    }
+
+    &.i_fairy_thick {
+        @apply bg-poke-fairy;
+    }
+
+    &.i_unknown_thick {
+        @apply bg-poke-unknown;
+    }
+
+    &.b_bordered{
+        @apply border-[0.5px] border-white;
+    }
+
+    &.s_shadow{
+        @apply shadow;
+    }
+}
