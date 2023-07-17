@@ -3,6 +3,7 @@ import { PokemonBall, PokemonHero, PokemonLogo } from "$/components/illustration
 import { Navbar } from "$/components/navbar"
 import { FC, Fragment } from "react"
 import { CONSTANS } from "$/constans"
+import Link from "next/link"
 
 
 type LandingSectionProps = {
@@ -27,7 +28,7 @@ const LandingSection: FC<LandingSectionProps> = ({ isShowFilter, onFilterClick }
             <h1 className="text-7xl"><strong>Find</strong> All Your Favorite <strong>Pokemon</strong></h1>
             <p className="text-3xl font-normal">You can know the type of Pokemon, its strengths, disadvantages and abilities</p>
             <Button intent="primary" dimension="bigger" shadow>See Pokemon</Button>
-            <span className="absolute bottom-4">Created with ❤️ by <strong>Imron Rosadi</strong> | Thankyou xxx for asset and inspiration</span>
+            <span className="absolute bottom-4">Created with ❤️ by <strong>Imron Rosadi</strong> | Thankyou <Link className="text-main-primary" target="_blank" href="https://www.figma.com/community/file/893705420616737018">Emmanuel García</Link> for asset and inspiration</span>
           </div>
           <div className="w-1/2 pt-24 relative">
             <div className="scale-90 absolute -left-10">

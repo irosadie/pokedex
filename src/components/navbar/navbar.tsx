@@ -37,7 +37,7 @@ const Badge: FC<BadgeProps> = (props) => {
         <Fragment>
             <nav className={navbar({ className })} {...rest}>
                 <div className={styles.container}>
-                    <div>{logo}</div>
+                    <div><Link href={'/'}>{logo}</Link></div>
                     <div>
                         <ul>
                             {menus}

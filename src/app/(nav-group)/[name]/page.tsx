@@ -59,10 +59,11 @@ const DetailPage: FC<DetailPageProps> = ({ params }) => {
 
   const handleOnFavoriteClick = (args: FavoriteProps) => {
 
+
     const data: GetPokemon["pokemonts"][number] = {
       id: args.id,
       name: args.name,
-      short_detail: [{ types: args.types }]
+      short_detail: [{ types: [...args.types] }]
     };
 
     const findId = favorites.findIndex(item => item.id === args.id)

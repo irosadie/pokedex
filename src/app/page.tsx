@@ -16,9 +16,12 @@ import { ModalFilter } from "$/sections/homes/modal-filter"
 import { Main } from "$/components/main"
 import { Container } from "$/components/container"
 import favoritesStore from "$/stores/favorites"
-import { toast } from 'react-toastify';
+import { toast } from 'react-toastify'
 
-let totalPokemon = 0;
+const MIN_SCROLL = 5
+const NAV_HEIGHT = 80
+
+let totalPokemon = 0
 
 const HomePage = () => {
 
@@ -27,7 +30,7 @@ const HomePage = () => {
   const [hasChecked, setHasChecked] = useState(false)
   const [isFilterOnNav, setIsFilterOnNav] = useState(false)
   const [favorites, setFavorites] = useRecoilState(favoritesStore)
-  const divRef = useRef<HTMLDivElement>(null);
+  const divRef = useRef<HTMLDivElement>(null)
 
   type FavoriteProps = {
     status: boolean,
@@ -38,16 +41,54 @@ const HomePage = () => {
     const findId = favorites.findIndex(item => item.id === args.data.id)
     if (findId !== -1) {
       setFavorites(favorites.filter((item) => item.id !== args.data.id))
-      return;
+      return
     }
     setFavorites([...favorites, { ...args.data, name: args.data.name }])
-    return;
+    return
   }
 
   const checkIsFavorite = (id: number) => {
     const findId = favorites.findIndex(item => item.id === id)
     return findId !== -1 ? false : true
   }
+
+  const handleScroll = () => {
+    const height = window.pageYOffset || document.documentElement.scrollTop
+    if (height > MIN_SCROLL && !hasChecked) {
+      const headerEl = document.querySelector(".header")
+      headerEl?.classList.add("shadow-md", "animate-fadeIn")
+      headerEl?.classList.remove("animate-fadeOut");
+      setHasChecked(true)
+    }
+    if (height < MIN_SCROLL) {
+      const headerEl = document.querySelector(".header");
+      headerEl?.classList.add("animate-fadeOut");
+      headerEl?.classList.remove("shadow-md", "animate-fadeIn");
+      setHasChecked(false)
+    }
+    if (divRef.current) {
+      const divElement = divRef.current;
+      const elementRect = divElement.getBoundingClientRect();
+      const elementTopOffset = elementRect.top;
+
+      if (elementTopOffset <= NAV_HEIGHT) {
+        setIsFilterOnNav(true)
+      }
+      if (elementTopOffset >= NAV_HEIGHT) {
+        setIsFilterOnNav(false)
+      }
+    }
+  }
+
+  const handleMouseEnter = (event: Event) => {
+    const element = event.target as HTMLElement
+    element.querySelector(".img")?.classList.add("bg-size-oncursor");
+  };
+
+  const handleMouseLeave = (event: Event) => {
+    const element = event.target as HTMLElement
+    element.querySelector(".img")?.classList.remove("bg-size-oncursor");
+  };
 
   const { fetchNextPage, data: pokemons } = useInfiniteQuery<GetPokemon, AxiosError>({
     queryKey: ["getPokemons"],
@@ -84,74 +125,10 @@ const HomePage = () => {
       }
       setHasMore(true)
     }
-
   }, [pokemons])
-
-  const handleScroll = () => {
-    const height = window.pageYOffset || document.documentElement.scrollTop;
-    if (height > 5 && !hasChecked) {
-      const headerEl = document.querySelector(".header");
-      headerEl?.classList.add("shadow-md", "animate-fadeIn");
-      headerEl?.classList.remove("animate-fadeOut");
-      setHasChecked(true)
-    }
-    if (height < 5) {
-      const headerEl = document.querySelector(".header");
-      headerEl?.classList.add("animate-fadeOut");
-      headerEl?.classList.remove("shadow-md", "animate-fadeIn");
-      setHasChecked(false)
-    }
-  }
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  })
-
-
-  const handleScroll2 = () => {
-    if (divRef.current) {
-      const divElement = divRef.current;
-      const elementRect = divElement.getBoundingClientRect();
-      const elementTopOffset = elementRect.top;
-
-      if (elementTopOffset <= 80) {
-        setIsFilterOnNav(true)
-      }
-      if (elementTopOffset >= 80) {
-        setIsFilterOnNav(false)
-      }
-    }
-  };
-
-  useEffect(() => {
-
-    if (divRef.current) {
-      window.addEventListener("scroll", handleScroll2);
-    }
-
-    return () => {
-      if (divRef.current) {
-        window.removeEventListener("scroll", handleScroll2);
-      }
-    };
-  }, []);
-
-
-  useEffect(() => {
-    const handleMouseEnter = (event: Event) => {
-      const element = event.target as HTMLElement
-      element.querySelector(".img")?.classList.add("bg-size-oncursor");
-    };
-
-    const handleMouseLeave = (event: Event) => {
-      const element = event.target as HTMLElement
-      element.querySelector(".img")?.classList.remove("bg-size-oncursor");
-    };
-
     const cards = document.querySelectorAll(".card");
 
     cards.forEach((card) => {
@@ -160,12 +137,13 @@ const HomePage = () => {
     });
 
     return () => {
+      window.removeEventListener("scroll", handleScroll);
       cards.forEach((card) => {
         card.removeEventListener("mouseenter", handleMouseEnter);
         card.removeEventListener("mouseleave", handleMouseLeave);
       });
-    };
-  });
+    }
+  })
 
   return (
     <Container>

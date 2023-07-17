@@ -15,7 +15,7 @@ const NavGroupLayout: FC<NavGroupLayoutProps> = ({ children }) => {
       <Navbar
         logo={<PokemonLogo />}
         menu={CONSTANS.MENUS}
-        className='header animate-fadeIn shadow-md'
+        className='bg-white shadow-md'
       />
       {children}
     </Container >
