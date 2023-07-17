@@ -1,14 +1,14 @@
 @mixin not-last-li {
   li:not(:last-child) {
-    @apply text-[#9D9EA1];
+    @apply text-main-black font-normal cursor-pointer;
 
     span {
-      @apply font-medium text-[#242424];
+      @apply font-medium text-main-black;
     }
   }
 }
 
 ul.breadcrumb{
-  @apply flex gap-x-6 text-sm;
+  @apply flex gap-x-6 text-base text-gray-500;
   @include not-last-li;
 }

@@ -4,7 +4,7 @@ import React, { Fragment, FC, HTMLAttributes, MouseEvent, useState, useEffect, m
 import { card } from './card.variant'
 import { cx, type VariantProps } from 'class-variance-authority'
 import { StarFilled } from '../icons'
-import { CircleTag } from '../circle-tag'
+import { Tag } from '../tag'
 import { Badge } from '../badge'
 import Link from 'next/link'
 import styles from './card.module.scss'
@@ -22,9 +22,10 @@ export interface CardProps
     name: string,
     identity: number,
     avatar: string,
-    isFavorite: boolean,
     types: Array<typeProps>,
-    onFavoriteClick: (status: boolean) => void
+    hasFavoriteBtn?: boolean
+    isFavorite?: boolean,
+    onFavoriteClick?: (status: boolean) => void
 }
 
 const Card: FC<CardProps> = (props) => {
@@ -35,17 +36,17 @@ const Card: FC<CardProps> = (props) => {
         identity,
         name,
         avatar,
+        types = ['unknown'],
         isFavorite,
         onFavoriteClick,
-        types = ['unknown'],
+        hasFavoriteBtn,
         ...rest
     } = props
 
     const [isFavoriteCard, setIsFavoriteCard] = useState(false)
 
     useEffect(() => {
-        console.log(isFavorite)
-        setIsFavoriteCard(isFavorite)
+        if (isFavorite) setIsFavoriteCard(isFavorite)
     }, [isFavorite])
 
     const pokeTypes: JSX.Element[] = []
@@ -59,23 +60,23 @@ const Card: FC<CardProps> = (props) => {
     const handleOnFavoriteClick = (e: MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
         setIsFavoriteCard((val) => !val)
-        onFavoriteClick(isFavoriteCard)
+        if (onFavoriteClick) onFavoriteClick(isFavoriteCard)
     }
-
-    console.log('render', Math.random())
 
     return (
         <Fragment>
             <div className={cx(styles.container, className)} {...rest}>
-                <button onClick={handleOnFavoriteClick} className={styles.favorite_btn}>
-                    <StarFilled color={isFavoriteCard ? COLOR.DEFAULT : COLOR.IS_FAVORITE} />
-                </button>
+                {
+                    hasFavoriteBtn && (<button onClick={handleOnFavoriteClick} className={styles.favorite_btn}>
+                        <StarFilled color={isFavoriteCard ? COLOR.DEFAULT : COLOR.IS_FAVORITE} />
+                    </button>)
+                }
                 <Link href={`/${name}`}>
                     <div className={styles.wrapper}>
                         <div className={styles.content}>
                             <div className={styles.wording}>
                                 <h3>{name}</h3>
-                                <CircleTag intent={firstIntent} children={identity} />
+                                <Tag intent={firstIntent} children={identity} />
                                 <div>
                                     <ul>{pokeTypes}</ul>
                                 </div>
@@ -90,4 +91,4 @@ const Card: FC<CardProps> = (props) => {
     )
 }
 
-export default Card
+export default memo(Card)

@@ -82,7 +82,7 @@ div.card{
 }
 
 .container{
-    @apply relative bg-white;
+    @apply relative bg-white rounded-lg;
 
     .favorite_btn{
         @apply absolute top-2 right-2 z-20;

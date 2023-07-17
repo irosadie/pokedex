@@ -19,13 +19,13 @@ const Breadcrumb: FC<BreadcrumbProps> = ({ data }) => {
 
     const breadcrumb: JSX.Element[] = []
 
-    data.map((v, i) => {
+    data.map((value, index) => {
 
-        let breadcrumbElement = <li key={i.toString()}>{v.title} <span>/</span></li>
+        let breadcrumbElement = <li key={`breadcrumb_${index}`}>{value.title} <span>/</span></li>
 
-        if (i === data.length - 1) {
+        if (index === data.length - 1) {
 
-            breadcrumbElement = <li key={i.toString()}>{v.title}</li>
+            breadcrumbElement = <li key={`breadcrumb_${index}`}>{value.title}</li>
         }
 
         breadcrumb.push(breadcrumbElement)

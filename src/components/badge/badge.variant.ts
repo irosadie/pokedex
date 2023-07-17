@@ -29,18 +29,24 @@ export const badge = cva(styles.badge, {
             fairy: styles.i_fairy,
             unknown: styles.i_unknow,
         },
+        shadow: {
+            true: styles.s_shadow,
+            false: null,
+        },
         bordered: {
             true: styles.b_bordered,
             false: null,
         },
         dimension: {
             normal: styles.d_normal,
+            big: styles.d_big,
         }
     },
     compoundVariants: [],
     defaultVariants: {
         intent: 'primary',
         dimension: 'normal',
+        shadow: false,
         bordered: false,
     },
 })
