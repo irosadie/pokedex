@@ -1,4 +1,4 @@
-import { FC, Fragment, LegacyRef, forwardRef } from "react"
+import { FC, ForwardedRef, Fragment, LegacyRef, forwardRef } from "react"
 import { Button } from "$/components/button"
 import { Card } from "$/components/card"
 import { GetPokemon } from "$/types"
@@ -10,18 +10,20 @@ type ContentSectionProps = {
   dataTotal: number,
   hasMore: boolean,
   isFilterOnNav: boolean,
+  ref: ForwardedRef<HTMLDivElement>
   fetchNextPage: () => void,
   checkIsFavorite: (id: number) => boolean,
   onFavoriteClick: ({ status, data }: { status: boolean, data: ContentSectionProps['data'][number] }) => void,
 }
 
-const ContentSection: FC<ContentSectionProps> = forwardRef((props, ref: LegacyRef<HTMLDivElement> | undefined) => {
+const ContentSection: FC<ContentSectionProps> = forwardRef((props) => {
 
   const {
     data,
     hasMore,
     isFilterOnNav,
     dataTotal,
+    ref,
     checkIsFavorite,
     onFavoriteClick,
     fetchNextPage,
