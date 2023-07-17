@@ -113,7 +113,6 @@ const HomePage = () => {
           variables: {
             offset: pageParam,
             limit: CONSTANS.PAGE_SIZE,
-            filter: null
           }
         }
       })
