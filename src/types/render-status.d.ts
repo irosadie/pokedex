@@ -1,0 +1,1 @@
+type RenderStatusProps = 'LOADING'|'NET_ERROR'|'NO_CONTENT'|'CONTENT'
