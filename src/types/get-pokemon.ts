@@ -19,7 +19,7 @@ interface PokemonAggregate {
   count: number;
 }
 
-export interface PokemonData {
+export interface GetPokemon {
   pokemon_aggregate: {
     aggregate: PokemonAggregate;
   };

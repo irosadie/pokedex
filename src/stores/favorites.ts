@@ -1,11 +1,11 @@
 /* eslint-disable camelcase */
-import { PokemonData } from '$/types';
+import { GetPokemon } from '$/types';
 import { atom } from 'recoil'
 import { recoilPersist } from 'recoil-persist'
 
 const { persistAtom } = recoilPersist()
 
-export type FavoritesProps = PokemonData['pokemonts']
+export type FavoritesProps = GetPokemon['pokemonts']
 
 const initFavoritesState: FavoritesProps = []
 
