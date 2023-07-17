@@ -12,12 +12,14 @@ const Badge: FC<BadgeProps> = (props) => {
         bordered,
         className,
         children,
+        shadow,
+        dimension,
         ...rest
     } = props
 
     return (
         <Fragment>
-            <span className={badge({ intent, bordered, className })} {...rest}>{children}</span>
+            <span className={badge({ intent, bordered, shadow, dimension, className })} {...rest}>{children}</span>
         </Fragment>
     )
 }
