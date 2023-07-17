@@ -30,6 +30,8 @@ const HomePage = () => {
   const [hasChecked, setHasChecked] = useState(false)
   const [isFilterOnNav, setIsFilterOnNav] = useState(false)
   const [favorites, setFavorites] = useRecoilState(favoritesStore)
+  const [isShowFilter, setIsShowFilter] = useState(false)
+
   const divRef = useRef<HTMLDivElement>(null)
 
   type FavoriteProps = {
@@ -90,6 +92,17 @@ const HomePage = () => {
     element.querySelector(".img")?.classList.remove("bg-size-oncursor");
   };
 
+  const handleShowFilter = () => {
+    setIsShowFilter((v) => !v)
+  }
+
+  const scrollToElement = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   const { fetchNextPage, data: pokemons } = useInfiniteQuery<GetPokemon, AxiosError>({
     queryKey: ["getPokemons"],
     enabled: true,
@@ -99,7 +112,8 @@ const HomePage = () => {
           query: GET_POKEMONS,
           variables: {
             offset: pageParam,
-            limit: CONSTANS.PAGE_SIZE
+            limit: CONSTANS.PAGE_SIZE,
+            filter: null
           }
         }
       })
@@ -149,20 +163,26 @@ const HomePage = () => {
     <Container>
       <LandingSection
         isShowFilter={isFilterOnNav}
-        onFilterClick={() => null}
+        onFilterClick={handleShowFilter}
+        onPrimaryBtnClick={() => scrollToElement("pokemon")}
       />
       <Main>
         <ContentSection
+          id="pokemon"
+          onFilterClick={handleShowFilter}
           checkIsFavorite={checkIsFavorite}
           data={pokemontList}
-          dataTotal={pokemontList.length}
+          dataTotal={totalPokemon}
           fetchNextPage={fetchNextPage}
           onFavoriteClick={handleOnFavoriteClick}
           hasMore={hasMore}
           isFilterOnNav={isFilterOnNav}
           ref={divRef}
         />
-        <ModalFilter />
+        <ModalFilter
+          isOpen={isShowFilter}
+          onCloseModal={handleShowFilter}
+        />
       </Main>
     </Container >
   )

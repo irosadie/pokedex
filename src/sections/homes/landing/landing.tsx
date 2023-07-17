@@ -9,9 +9,10 @@ import Link from "next/link"
 type LandingSectionProps = {
   isShowFilter: boolean
   onFilterClick: () => void
+  onPrimaryBtnClick: () => void
 }
 
-const LandingSection: FC<LandingSectionProps> = ({ isShowFilter, onFilterClick }) => {
+const LandingSection: FC<LandingSectionProps> = ({ isShowFilter, onFilterClick, onPrimaryBtnClick }) => {
 
   return (
     <Fragment>
@@ -27,7 +28,7 @@ const LandingSection: FC<LandingSectionProps> = ({ isShowFilter, onFilterClick }
           <div className="w-1/2 h-[100vh] flex flex-col justify-center space-y-[64px] px-4">
             <h1 className="text-7xl"><strong>Find</strong> All Your Favorite <strong>Pokemon</strong></h1>
             <p className="text-3xl font-normal">You can know the type of Pokemon, its strengths, disadvantages and abilities</p>
-            <Button intent="primary" dimension="bigger" shadow>See Pokemon</Button>
+            <Button onClick={onPrimaryBtnClick} intent="primary" dimension="bigger" shadow>See Pokemon</Button>
             <span className="absolute bottom-4">Created with ❤️ by <strong>Imron Rosadi</strong> | Thankyou <Link className="text-main-primary" target="_blank" href="https://www.figma.com/community/file/893705420616737018">Emmanuel García</Link> for asset and inspiration</span>
           </div>
           <div className="w-1/2 pt-24 relative">

@@ -6,6 +6,7 @@ import { getArtwork } from "$/utils"
 import InfiniteScroll from "react-infinite-scroll-component"
 
 type ContentSectionProps = {
+  id: string,
   data: GetPokemon['pokemonts'],
   dataTotal: number,
   hasMore: boolean,
@@ -14,19 +15,21 @@ type ContentSectionProps = {
   fetchNextPage: () => void,
   checkIsFavorite: (id: number) => boolean,
   onFavoriteClick: ({ status, data }: { status: boolean, data: ContentSectionProps['data'][number] }) => void,
+  onFilterClick: () => void
 }
 
-const ContentSection: FC<ContentSectionProps> = forwardRef((props) => {
+const ContentSection: FC<ContentSectionProps> = forwardRef((props, ref) => {
 
   const {
+    id,
     data,
     hasMore,
     isFilterOnNav,
     dataTotal,
-    ref,
     checkIsFavorite,
     onFavoriteClick,
     fetchNextPage,
+    onFilterClick,
   } = props
 
   const pokemonCards: JSX.Element[] = []
@@ -50,7 +53,7 @@ const ContentSection: FC<ContentSectionProps> = forwardRef((props) => {
 
   return (
     <Fragment>
-      <section>
+      <section id={id}>
         <InfiniteScroll
           dataLength={data.length}
           next={fetchNextPage}
@@ -65,7 +68,7 @@ const ContentSection: FC<ContentSectionProps> = forwardRef((props) => {
                 <h2 className="text-4xl font-normal">{dataTotal} <strong>Pokemons</strong> for you to choose your favorite</h2>
               </div>
               <div className="flex flex-1 justify-end">
-                <Button intent="primary" dimension="small" className={isFilterOnNav ? 'hidden' : undefined}>Filter</Button>
+                <Button onClick={onFilterClick} intent="primary" dimension="small" className={isFilterOnNav ? 'hidden' : undefined}>Filter</Button>
               </div>
             </div>
             <div className="grid grid-cols-3 gap-8 mt-12">{pokemonCards}</div>
