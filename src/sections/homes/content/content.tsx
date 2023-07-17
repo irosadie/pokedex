@@ -1,4 +1,4 @@
-import { ClassAttributes, FC, Fragment, LegacyRef, forwardRef } from "react"
+import { FC, Fragment, LegacyRef, forwardRef } from "react"
 import { Button } from "$/components/button"
 import { Card } from "$/components/card"
 import { GetPokemon } from "$/types"
@@ -10,13 +10,12 @@ type ContentSectionProps = {
   dataTotal: number,
   hasMore: boolean,
   isFilterOnNav: boolean,
-  refProps: ClassAttributes<HTMLDivElement>['ref'] | LegacyRef<HTMLDivElement>,
   fetchNextPage: () => void,
   checkIsFavorite: (id: number) => boolean,
   onFavoriteClick: ({ status, data }: { status: boolean, data: ContentSectionProps['data'][number] }) => void,
 }
 
-const ContentSection: FC<ContentSectionProps> = forwardRef((props, ref) => {
+const ContentSection: FC<ContentSectionProps> = forwardRef((props, ref: LegacyRef<HTMLDivElement> | undefined) => {
 
   const {
     data,
